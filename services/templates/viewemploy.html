@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+{% load static %}  
+<head>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+body {font-family: "Times New Roman", Georgia, Serif;}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Playfair Display";
+  letter-spacing: 5px;
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+    <a href="#home" class="w3-bar-item w3-button">Online Banking System</a>
+    <!-- Right-sided navbar links. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">
+      <a href="/ViewCustomer" class="w3-bar-item w3-button">view customer</a>
+      <a href="/addemploy" class="w3-bar-item w3-button">AddEmploy</a>
+	  <a href="/viewemploy" class="w3-bar-item w3-button">ViewEmploy</a>
+      <a href="/logout" class="w3-bar-item w3-button">Logout</a>
+    </div>
+  </div>
+</div>
+<div style="padding-top:80px;padding-left:10px;">
+<table width=880 border=1>  
+    
+    <tr>  
+        <th>EmpID</th>  
+        <th>EmpName</th>  
+        <th>EmpEmail</th>  
+        <th>EmpContact</th>  
+		<th>EmpPassword</th>
+		<th>EmpSalary</th>
+        
+    </tr>  
+    
+    
+{% for employee in employees %}  
+    <tr>  
+        <td>{{ employee.eid }}</td>  
+        <td>{{ employee.ename }}</td>  
+        <td>{{ employee.eemail }}</td>  
+        <td>{{ employee.econtact }}</td>  
+		<td>{{ employee.password }}</td>
+		<td>{{ employee.esal }}</td>
+            
+    </tr>  
+{% endfor %}  
+    
+</table>  
+</div>
+</body>
+</html>

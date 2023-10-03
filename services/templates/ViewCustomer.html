@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+{% load static %}  
+<head>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+body {font-family: "Times New Roman", Georgia, Serif;}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Playfair Display";
+  letter-spacing: 5px;
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+    <a href="#home" class="w3-bar-item w3-button">Online Banking System</a>
+    <!-- Right-sided navbar links. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">
+       <a href="/deposit" class="w3-bar-item w3-button">Deposit</a>
+	  <a href="/viewemploy" class="w3-bar-item w3-button">transfer</a>
+	  <a href="/withdrawl" class="w3-bar-item w3-button">Withdrawl</a>
+	  <a href="/addCustomer" class="w3-bar-item w3-button">AddCustomer</a>
+	  <a href="/ViewCustomer" class="w3-bar-item w3-button">ViewCustomer</a>
+	  
+      <a href="/logout" class="w3-bar-item w3-button">Logout</a>
+    </div>
+  </div>
+</div>
+<div style="padding-top:80px;padding-left:10px;">
+<table width=880 border=1>  
+    
+    <tr>   
+        <th>ano</th>  
+        <th>cname</th> 
+        <th>cadd</th> 		
+        <th>cmail</th>  
+        <th>cContact</th>  
+		<th>cPassword</th>
+		<th>cbal</th>
+         
+    </tr>  
+    
+    
+{% for customer in customers %}  
+    <tr>  
+        <td>{{ customer.id }}</td>  
+		<td>{{ customer.ano }}</td>
+        <td>{{ customer.cname }}</td>  
+        <td>{{ customer.cemail }}</td>  
+        <td>{{ customer.ccontact }}</td>  
+		<td>{{ customer.cpassword }}</td>
+		<td>{{ customer.cbal }}</td>
+        
+    </tr>  
+{% endfor %}  
+    
+</table>  
+</div>
+</body>
+</html>

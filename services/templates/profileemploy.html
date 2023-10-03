@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+{% load static %}  
+<head>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+body {font-family: "Times New Roman", Georgia, Serif;}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Playfair Display";
+  letter-spacing: 5px;
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+    <a href="#home" class="w3-bar-item w3-button">Online Banking System</a>
+    <!-- Right-sided navbar links. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">
+      <a href="/ViewCustomer" class="w3-bar-item w3-button">view customer</a>
+      <a href="/addemploy" class="w3-bar-item w3-button">AddEmploy</a>
+	  <a href="/viewemploy" class="w3-bar-item w3-button">ViewEmploy</a>
+      <a href="/logout" class="w3-bar-item w3-button">Logout</a>
+    </div>
+  </div>
+</div>
+<div style="padding-top:80px;padding-left:300px;">
+<table border=1>  
+<form action="/UpdateEmployDB/">    
+    
+{% for employee in employees %}  
+	 <input type="hidden" name="t0" value="{{ employee.id }}">
+    <tr><th>EmpID</th>  <td> <input type="text" name="t1" value="{{ employee.eid }}"></td>  </tr>
+    <tr>    <th>EmpName</th><td><input type="text" name="t2" value="{{ employee.ename }}"></td>  </tr>  
+        <tr><th>EmpEmail</th>  <td><input type="text" name="t3" value="{{ employee.eemail }}"</td></tr>  
+        <tr><th>EmpContact</th><td><input type="text" name="t4" value="{{ employee.econtact }}"</td>  </tr>
+		<tr><th>EmpPassword</th><td><input type="text" name="t5" value="{{ employee.password }}"</td></tr>
+		<tr><th>EmpSalary</th><td><input type="text" name="t6" value="{{ employee.esal }}"</td></tr>
+		
+
+{% endfor %}  
+ </form>   
+</table>  
+</div>
+</body>
+</html>
